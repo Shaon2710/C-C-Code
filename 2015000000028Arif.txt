@@ -1,0 +1,52 @@
+/*
+Name: Arif Hossain
+ID: 2015000000028
+Assignment on Building a stack using class
+*/
+#include<bits/stdc++.h>
+using namespace std;
+
+class Stack
+{
+private:
+    int S[500],t;
+public:
+    Stack()
+    {
+        t=0;
+    }
+    void Push(int x)
+    {
+        S[t++]= x;
+    }
+    void Pop()
+    {
+       if (t==0) cout << "Operation is not valid!" << endl;
+       else S[--t];
+    }
+    void ShowStack()
+    {
+        if(t==0) cout <<"Stack is Empty!" << endl;
+        else {
+           cout << S[t-1] << "\n";
+        }
+    }
+};
+
+int main()
+{
+    Stack st;
+    int n;
+    for(int i= 1; i<=2;i++)
+    {
+        cout << "Enter an integer:" <<endl;
+        cin>>n;
+        st.Push(n);
+    }
+    cout <<"Show Stack" <<endl;
+    st.ShowStack();
+    st.Pop();
+    st.ShowStack();
+
+ return 0;
+}
